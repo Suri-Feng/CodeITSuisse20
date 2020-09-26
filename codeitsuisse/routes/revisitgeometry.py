@@ -20,8 +20,6 @@ def evaluateGeometry():
     logging.info("My result :{}".format(result))
     return jsonify(result);
 
-
-
 def geometry(shapeCoordinates, lineCoordinates):
     from numpy import ones,vstack
     from numpy.linalg import lstsq
@@ -37,7 +35,7 @@ def geometry(shapeCoordinates, lineCoordinates):
         if ((interSection[0]<=movingpoints[0][0] and  interSection[0]>=movingpoints[1][0]) or (interSection[0]>=movingpoints[0][0] and  interSection[0]<=movingpoints[1][0]))\
         and ((interSection[1]<=movingpoints[0][1] and  interSection[1]>=movingpoints[1][1]) or (interSection[1]>=movingpoints[0][1] and  interSection[1]<=movingpoints[1][1])):
             if interSection not in results:
-                results.append(interSection)
+                results.append({"x": interSection[0], "y": interSection[1]})
     return results
 
 def line_intersection(line1, line2):
