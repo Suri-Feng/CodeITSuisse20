@@ -25,6 +25,6 @@ def guess(data):
     c = 91
     Wa = 10
     Wb = 20
-    Wc = 20
+    Wc = 19
     ans = Wa*a + Wb*b + Wc*c
     return str(ans)
