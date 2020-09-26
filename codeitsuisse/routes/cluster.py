@@ -28,10 +28,11 @@ def unionaround(grid, x, y, uf):
         if grid[nx][ny] != "*":
             uf.union(x*n + y + 1, nx*n +ny + 1)
             onlyOne = False
-    if (grid[x][y] == '1'):
-        uf.union(x*n+y+1, 0)
+    if grid[x][y] == '1':
+        if onlyOne == False:
+            uf.union(x*n+y+1, 0)
         if onlyOne == True:
-            uf.union(x*n+y+1, n*m +1 )
+            uf.union(x*n+y+1, n*m +1)
 
 
 def cluster(grid):
@@ -44,6 +45,7 @@ def cluster(grid):
             if (grid[i][j] != "*"):
                 unionaround(grid, i, j, uf)
     ans = 0
+    print(uf.parents)
     for i in range(1, n*m+1):
         if uf.parents[i] < -1  and uf.connected(i, 0):
             ans += 1
