@@ -33,6 +33,7 @@ def resequence(data):
         ans.append({"id": ids[i], "geneSequence": seqs2[i]})
     
     result = {"runId": runId, "list": ans}
+    return result
 
 def shuffle(seq):
     A = 0
