@@ -55,7 +55,7 @@ def shuffle(seq):
     if diff <= 0:
         ans = reconstructACGT(A, C, G, T)
     else:
-        ans = reconstructCC(A, C, G, T, diff, ACG_smallest)
+        ans = reconstructCC(A, C, G, T, diff, AGT_smallest)
     return ans 
 
 def reconstructACGT(A, C, G, T):
@@ -84,13 +84,13 @@ def reconstructACGT(A, C, G, T):
         G -= 1
     return ans
 
-def reconstructCC(A, C, G, T, diff, ACG_smallest):
+def reconstructCC(A, C, G, T, diff, AGT_smallest):
     if diff%2 == 0:
         CC = diff/2
-        ACGT = ACG_smallest
+        ACGT = AGT_smallest
     else:
         CC = int(diff/2) + 1
-        ACGT = ACGT_samllest - 1 
+        ACGT = AGT_smallest - 1 
     ans = 'ACGT'*ACGT
     A -= ACGT
     G -= ACGT
