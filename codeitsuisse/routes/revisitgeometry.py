@@ -31,7 +31,7 @@ def geometry(shapeCoordinates, lineCoordinates):
         if ((interSection[0]<=movingpoints[0][0] and  interSection[0]>=movingpoints[1][0]) or (interSection[0]>=movingpoints[0][0] and  interSection[0]<=movingpoints[1][0]))\
         and ((interSection[1]<=movingpoints[0][1] and  interSection[1]>=movingpoints[1][1]) or (interSection[1]>=movingpoints[0][1] and  interSection[1]<=movingpoints[1][1])):
             if interSection not in results:
-                results.append({"x": interSection[0], "y": interSection[1]})
+                results.append({"x": round(interSection[0],2), "y": round(interSection[1],2)})
     return results
 
 def line_intersection(line1, line2):
@@ -49,3 +49,4 @@ def line_intersection(line1, line2):
     x = det(d, xdiff) / div
     y = det(d, ydiff) / div
     return x, y
+
