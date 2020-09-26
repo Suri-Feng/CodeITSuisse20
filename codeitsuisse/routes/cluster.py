@@ -9,7 +9,7 @@ logger = logging.getLogger(__name__)
 
 @app.route('/cluster', methods=['POST'])
 def evaluateCluster():
-    data = request.get_json();
+    data = request.get_data();
     logging.info("data sent for evaluation {}".format(data))
     result = cluster(data)
     logging.info("My result :{}".format(result))
@@ -43,7 +43,7 @@ def cluster(grid):
     for i in range(1, num):
         if (uf.parents[i] < -1 or uf.parents[i] == 0) and uf.connected(i, 0):
             ans += 1
-    print(uf.parents)
+    #print(uf.parents)
     return {"result":ans}
 
 
