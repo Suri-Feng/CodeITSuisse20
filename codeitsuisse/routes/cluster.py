@@ -40,8 +40,8 @@ def cluster(grid):
             if (grid[i][j] != "*"):
                 unionaround(grid, i, j, uf)
     ans = 0
-    for i in range(num):
-        if uf.parents[i] <= -1 and uf.connected(i, 0):
+    for i in range(1, num):
+        if (uf.parents[i] < -1 or uf.parents[i] == 0) and uf.connected(i, 0):
             ans += 1
     print(uf.parents)
     return {"result":ans}
