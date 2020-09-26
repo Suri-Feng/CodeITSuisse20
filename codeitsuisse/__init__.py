@@ -5,3 +5,4 @@ import codeitsuisse.routes.revisitgeometry
 import codeitsuisse.routes.saladSpree
 #import codeitsuisse.routes.fruitbasket
 import codeitsuisse.routes.cluster
+import codeitsuisse.routes.socialdistance
