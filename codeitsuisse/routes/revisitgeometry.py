@@ -18,9 +18,9 @@ def evaluateGeometry():
 
 
     logging.info("My result :{}".format(result))
-    return json.dumps(result);
+    return jsonify(result);
 
 
 
-def gemometry(x, y):
+def geometry(x, y):
     return []
