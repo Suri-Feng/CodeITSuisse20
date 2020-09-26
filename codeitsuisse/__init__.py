@@ -6,3 +6,5 @@ import codeitsuisse.routes.saladSpree
 #import codeitsuisse.routes.fruitbasket
 import codeitsuisse.routes.cluster
 import codeitsuisse.routes.socialdistance
+import codeitsuisse.routes.gmo
+import codeitsuisse.routes.hedging
