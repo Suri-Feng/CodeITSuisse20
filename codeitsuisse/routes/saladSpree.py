@@ -28,7 +28,7 @@ def salad(num, myLists):
 def prices(num, price_list):
     tot = 0
     counter = num
-    for i in len(price_list):
+    for i in range(len(price_list)):
         if price_list[i] == "X":
             tot = 0 
             counter = num
