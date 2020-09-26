@@ -44,7 +44,7 @@ def cluster(grid):
         if (uf.parents[i] < -1 or uf.parents[i] == 0) and uf.connected(i, 0):
             ans += 1
     #print(uf.parents)
-    return {"result":ans}
+    return {"answer":ans}
 
 
 class Unionfind:
