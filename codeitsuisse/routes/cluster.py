@@ -15,7 +15,7 @@ def evaluateCluster():
     logging.info("My result :{}".format(result))
     return jsonify(result);
 
-def unionaround(grid, x, y, uf):
+def unionaround(grid, x, y, uf, onlyone):
     m, n = len(grid), len(grid[0])
     dx = [-1 , 1, 0, 0, -1, 1, 1, -1]
     dy = [0, 0, -1, 1, -1, 1, -1, 1]
@@ -28,11 +28,9 @@ def unionaround(grid, x, y, uf):
         if grid[nx][ny] != "*":
             uf.union(x*n + y + 1, nx*n +ny + 1)
             onlyOne = False
-    if grid[x][y] == '1':
-        if onlyOne == False:
-            uf.union(x*n+y+1, 0)
-        if onlyOne == True:
+    if grid[x][y] == '1' and onlyOne == True:
             uf.union(x*n+y+1, n*m +1)
+            onlyone.append(x*n+y+1)
 
 
 def cluster(grid):
@@ -40,14 +38,21 @@ def cluster(grid):
     n = len(grid[0])
     num = m*n + 2
     uf = Unionfind(n*m +2)
+    uf2 = Unionfind(n*m +2)
+    onlyone =[]
     for i in range(m):
         for j in range(n):
             if (grid[i][j] != "*"):
-                unionaround(grid, i, j, uf)
+                unionaround(grid, i, j, uf, onlyone)
+                unionaround(grid, i, j, uf2, onlyone)
+    for i in range(m):
+        for j in range(n):
+            if grid[i][j] == '1' and ((i*n+j+1) not in onlyone):
+                uf2.union(i*n+j+1, 0)
     ans = 0
     print(uf.parents)
     for i in range(1, n*m+1):
-        if uf.parents[i] < -1  and uf.connected(i, 0):
+        if uf.parents[i] < -1  and uf2.connected(i, 0):
             ans += 1
         if uf.connected(i, n*m+1):
             ans += 1
