@@ -18,27 +18,35 @@ def evaluateSalad():
     return jsonify(result);
 
 def salad(num, myLists):
-    res = 0
+    results = []
     for i in range(len(myLists)):
         salad_prices = myLists[i]
         temp_res = prices(num, salad_prices)
-        res = temp_res if temp_res > res else res
-    return res
+        if temp_res != -1:
+            results.append(temp_res)
+        results.sort()
+
+    if results == []:
+        return 0
+    else:
+        return results[0]
+
 
 def prices(num, price_list):
-    tot = 0
+    tots = []
     counter = num
-    for i in range(len(price_list)):
-        if price_list[i] == "X":
-            tot = 0 
-            counter = num
-        else:
-            tot += int(price_list[i])
-            counter -= 1
-            if counter == 0:
+    for i in range(len(price_list) - counter):
+        tot = 0
+        for j in range(counter):
+            if price_list[i + j] == "X":
+                tot = 0
                 break
-    if counter == 0:
-        ans = tot
+            else:
+                tot += int(price_list[i + j])
+        if tot != 0:
+            tots.append(tot)
+    tots.sort()
+    if tots == []:
+        return -1
     else:
-        ans = 0
-    return ans
+        return tots[0]
