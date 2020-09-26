@@ -9,7 +9,7 @@ logger = logging.getLogger(__name__)
 
 @app.route('/square', methods=['POST'])
 def evaluate():
-    data = request.get_date();
+    data = request.get_json();
     logging.info("data sent for evaluation {}".format(data))
     result = cluster(data)
     logging.info("My result :{}".format(result))
@@ -41,7 +41,7 @@ def cluster(grid):
                 unionaround(grid, i, j, uf)
     ans = 0
     for i in range(num):
-        if uf.parents[i] < -1 and uf.connected(i, 0):
+        if uf.parents[i] <= -1 and uf.connected(i, 0):
             ans += 1
     print(uf.parents)
     return {"result":ans}
