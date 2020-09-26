@@ -8,7 +8,7 @@ from codeitsuisse import app;
 logger = logging.getLogger(__name__)
 
 @app.route('/social_distancing', methods=['POST'])
-def evaluate():
+def evaluateSocialDistancing():
     data = request.get_json();
     logging.info("data sent for evaluation {}".format(data))
     result = ways(data.get("tests"))
