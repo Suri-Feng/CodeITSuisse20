@@ -22,7 +22,7 @@ def unionaround(grid, x, y, uf):
     onlyOne = True
     for i in range(8):
         nx = x+dx[i]
-        ny = x+dy[i]
+        ny = y+dy[i]
         if (nx < 0 or nx >= m or ny<0 or ny >=n):
             continue
         if grid[nx][ny] != "*":
