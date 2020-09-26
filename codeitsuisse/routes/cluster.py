@@ -13,7 +13,7 @@ def evaluate():
     logging.info("data sent for evaluation {}".format(data))
     result = cluster(data)
     logging.info("My result :{}".format(result))
-    return json.dumps(result);
+    return jsonify(result);
 
 def unionaround(grid, x, y, uf):
     m, n = len(grid), len(grid[0])
