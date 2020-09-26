@@ -12,14 +12,10 @@ def evaluateGMO():
     data = request.get_json();
     logging.info("data sent for evaluation {}".format(data))
     runId = data.get("runId")
-    allLists = resequence(data.get("list"))
-    result = {"runId":runId, "list": allLists}
+    allLists = resequence(data)
+    result = {"id":runId, "list": allLists}
     logging.info("My result :{}".format(result))
-    response = app.response_class(
-        response=json.dumps(result),
-        mimetype='application/json'
-    )
-    return response
+    return jsonify(result)
 
 def resequence(myList):
     ids = []
