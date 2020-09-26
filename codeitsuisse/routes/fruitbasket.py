@@ -16,7 +16,7 @@ def evaluate():
     banana = data.get("maBanana");
     result = guess(apple, watermelon, banana)
     logging.info("My result :{}".format(result))
-    return json.dumps(result);
+    return jsonify(result);
 
 def guess(apple, watermelon, banana):
     Wa = 10
