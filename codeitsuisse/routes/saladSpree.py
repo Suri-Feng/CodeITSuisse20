@@ -36,15 +36,17 @@ def prices(num, price_list):
     tots = []
     counter = num
     for i in range(len(price_list) - counter):
-        tot = 0
+        HasX = False
         for j in range(counter):
             if price_list[i + j] == "X":
-                tot = 0
+                HasX = True
                 break
-            else:
-                tot += int(price_list[i + j])
-        if tot != 0:
-            tots.append(tot)
+        if HasX == False:   
+            price = 0
+            for j in range(counter):
+                price += int(price_list[i+j])
+            tots.append(price)
+
     tots.sort()
     if tots == []:
         return -1
