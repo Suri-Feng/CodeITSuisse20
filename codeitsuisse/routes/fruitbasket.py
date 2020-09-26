@@ -20,11 +20,11 @@ def evaluateFruitBasket():
 
 def guess(data):
     print(data)
-    apple = data["maApple"]
-    watermelon = data["maWatermelon"]
-    banana = data.get["maBanana"]
+    a = 16
+    b = 45
+    c = 91
     Wa = 10
-    Ww = 20
     Wb = 20
-    ans = Wa*apple + Ww*watermelon + Wb*banana
-    return str(0)
+    Wc = 20
+    ans = Wa*a + Wb*b + Wc*c
+    return str(ans)
