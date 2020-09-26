@@ -27,9 +27,11 @@ def salad(num, myLists):
         results.sort()
 
     if results == []:
-        return 0
+        ans = 0
     else:
-        return results[0]
+        ans = results[0]
+    ansDict = {"result" : ans}
+    return ansDict
 
 
 def prices(num, price_list):
