@@ -33,12 +33,12 @@ def prices(num, price_list):
             tot = 0 
             counter = num
         else:
-            tot += price_list[i]
+            tot += int(price_list[i])
             counter -= 1
             if counter == 0:
                 break
-        if counter == 0:
-            ans = tot
-        else:
-            ans = 0
+    if counter == 0:
+        ans = tot
+    else:
+        ans = 0
     return ans
