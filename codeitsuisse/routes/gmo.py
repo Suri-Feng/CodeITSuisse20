@@ -18,6 +18,7 @@ def evaluateGMO():
 def resequence(data):
     runId = data.get("runId")
     myList = data.get("list")
+    print(runId)
     ids = []
     seqs = []
     seqs2 = []
