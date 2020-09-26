@@ -12,11 +12,7 @@ def evaluateGeometry():
     data = request.get_json();
     logging.info("data sent for evaluation {}".format(data))
     #inputValue = data.get("input");
-    result = []
-    for testCase in data:
-        result.append(geometry(testCase["shapeCoordinates"], testCase["lineCoordinates"]))
-
-
+    result = geometry(data["shapeCoordinates"], data["lineCoordinates"])
     logging.info("My result :{}".format(result))
     return jsonify(result);
 
