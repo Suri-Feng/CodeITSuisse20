@@ -9,7 +9,7 @@ logger = logging.getLogger(__name__)
 
 @app.route('/cluster', methods=['POST'])
 def evaluateCluster():
-    data = request.get_data();
+    data = request.get_json();
     logging.info("data sent for evaluation {}".format(data))
     result = cluster(data)
     logging.info("My result :{}".format(result))
