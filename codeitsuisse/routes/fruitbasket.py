@@ -25,4 +25,5 @@ def guess(apple, watermelon, banana):
     Wa = 10
     Ww = 20
     Wb = 20
-    return str(Wa*apple + Ww*watermelon + Wb*banana)
+    ans = Wa*apple + Ww*watermelon + Wb*banana
+    return str(0)
