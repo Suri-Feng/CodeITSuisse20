@@ -20,6 +20,10 @@ def evaluateFruitBasket():
 
 def guess(data):
     print(data)
+    data.replace('{', '')
+    data.replace('}', '')
+    data.split(',')
+    print(data)
     a = 16
     b = 45
     c = 91
