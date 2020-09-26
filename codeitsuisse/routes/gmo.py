@@ -15,7 +15,7 @@ def evaluateGMO():
     allLists = resequence(data.get("list"))
     result = {"runId":runId, "list": allLists}
     logging.info("My result :{}".format(result))
-    return json.dumps(result);
+    return jsonify(result);
 
 def resequence(myList):
     ids = []
