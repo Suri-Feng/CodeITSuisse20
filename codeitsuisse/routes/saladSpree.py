@@ -20,7 +20,7 @@ def evaluateSalad():
 def price(number_of_salads, salad_prices_street_map):
     result=0
     for street in salad_prices_street_map:
-        if len(street)<=number_of_salads:
+        if len(street) < number_of_salads:
             continue
         else:
             for i in range(len(street)-number_of_salads+1):
