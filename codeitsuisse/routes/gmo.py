@@ -18,7 +18,7 @@ def evaluateGMO():
 def resequence(data):
     runId = data.get("runId")
     myList = data.get("list")
-    print(runId)
+    #print(runId)
     ids = []
     seqs = []
     seqs2 = []
@@ -71,7 +71,7 @@ def reconstructACGT(A, C, G, T):
             ans += 'A'
             A -= 1
         else:
-            ans += 'A'
+            ans += 'AA'
             A -= 2
         if T > 0:
             ans += 'T'
@@ -103,7 +103,7 @@ def reconstructCC(A, C, G, T, diff, AGT_smallest):
             ans += 'A'
             A -= 1
         else:
-            ans += 'A'
+            ans += 'AA'
             A -= 2
         if CC > 0:
             ans += 'CC'
