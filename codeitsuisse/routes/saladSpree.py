@@ -8,15 +8,12 @@ from codeitsuisse import app;
 logger = logging.getLogger(__name__)
 
 @app.route('/salad-spree', methods=['POST'])
+
 def evaluateSalad():
     data = request.get_json();
     logging.info("data sent for evaluation {}".format(data))
     #inputValue = data.get("input");
-    result = []
-    for testCase in data:
-        result.append(salad(testCase["number_of_salads"], testCase["salad_prices_street_map"]))
-
-
+    result = salad(data.get("number_of_salads"), data.get("salad_prices_street_map"))
     logging.info("My result :{}".format(result))
     return jsonify(result);
 
