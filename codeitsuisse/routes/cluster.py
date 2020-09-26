@@ -40,10 +40,10 @@ def cluster(grid):
             if (grid[i][j] != "*"):
                 unionaround(grid, i, j, uf)
     ans = 0
+    print(uf.parents)
     for i in range(1, num):
         if (uf.parents[i] < -1 or uf.parents[i] == 0) and uf.connected(i, 0):
             ans += 1
-    #print(uf.parents)
     return {"answer":ans}
 
 
@@ -67,8 +67,13 @@ class Unionfind:
 
     def union(self, v1, v2):
         size1 = self.size(v1)
+        size2 = self.size(v2)
         root1 = self.find(v1)
         root2 = self.find(v2)
         if (root1 != root2 or (root1 == -1 and root2 == -1)):
-            self.parents[root1] = root2
-            self.parents[root2] -= size1
+            if size1<=size2:
+                self.parents[root1] = root2
+                self.parents[root2] -= size1
+            else:
+                self.parents[root2] = root1
+                self.parents[root1] -= size2
