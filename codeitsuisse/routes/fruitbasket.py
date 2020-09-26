@@ -19,6 +19,7 @@ def evaluateFruitBasket():
     return jsonify(result);
 
 def guess(data):
+    print(data)
     apple = data["maApple"]
     watermelon = data["maWatermelon"]
     banana = data.get["maBanana"]
