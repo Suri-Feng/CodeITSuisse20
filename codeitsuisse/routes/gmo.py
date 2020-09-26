@@ -11,13 +11,13 @@ logger = logging.getLogger(__name__)
 def evaluateGMO():
     data = request.get_json();
     logging.info("data sent for evaluation {}".format(data))
-    runId = data.get("runId")
-    allLists = resequence(data)
-    result = {"id":runId, "list": allLists}
+    result = resequence(data)
     logging.info("My result :{}".format(result))
     return jsonify(result)
 
-def resequence(myList):
+def resequence(data):
+    runId = data.get("runId")
+    myList = data.get("list")
     ids = []
     seqs = []
     seqs2 = []
@@ -30,7 +30,8 @@ def resequence(myList):
         seqs2.append(shuffle(seqs[i]))
     for i in range(n):
         ans.append({"id": ids[i], "geneSequence": seqs2[i]})
-    return ans 
+    
+    result = {"runId": runId, "list": ans}
 
 def shuffle(seq):
     A = 0
