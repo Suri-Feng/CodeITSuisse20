@@ -19,7 +19,8 @@ def evaluateFruitBasket():
     return jsonify(result);
 
 def guess(data):
-    data = dict(data)
+    print(type(data))
+    '''
     a = data['maApple']
     w = data['maWatermelon']
     b = data['maBanana']
@@ -27,6 +28,7 @@ def guess(data):
     av = data['maAvocado']
     po = data['maPomegranate']
     r = data['maRamubutan']
+    '''
     print(data)
     a = 16
     b = 45
