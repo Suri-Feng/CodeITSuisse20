@@ -18,6 +18,11 @@ def evaluateFruitBasket():
     logging.info("My result :{}".format(result))
     return jsonify(result);
 
+
+def check(fruit):
+    if fruit is None:
+        return 0
+
 def guess(data):
     
     data = dict(data)
@@ -30,7 +35,14 @@ def guess(data):
     po = data.get('maPomegranate')
     r = data.get('maRamubutan')
 
-    print(data)
+    a = check(a)
+    w = check(w)
+    b = check(b)
+    p = check(p)
+    av = check(av)
+    po = check(po)
+    r = check(r)
+
     Wa = 0
     Ww = 0
     Wb = 0
