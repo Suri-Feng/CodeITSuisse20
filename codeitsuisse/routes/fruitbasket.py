@@ -43,6 +43,8 @@ def guess(data):
     po = check(po)
     r = check(r)
 
+    print(type(r))
+    
     Wa = 0
     Ww = 0
     Wb = 0
