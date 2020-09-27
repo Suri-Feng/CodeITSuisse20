@@ -24,7 +24,7 @@ def guess(data):
     d = dict(data)
 
     weights = {'maApple': 3, 'maWatermelon': 52, 'maBanana': 0, 'maPineapple': 82, \
-                 'maAvocado': 5, 'maPomegranate': 28, 'maRamubutan': 29}
+                 'maAvocado': 6, 'maPomegranate': 28, 'maRamubutan': 29}
     fruits = []
     nums = []
     for k, v in d.items():
