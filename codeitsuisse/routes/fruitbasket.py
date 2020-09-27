@@ -34,6 +34,6 @@ def guess(data):
 
     ans = 0
     for i in range(3):
-        ans += nums[i]*weights.get(fruits[i])
+        ans += nums[i]*weights[fruits[i]]
 
     return str(ans)
