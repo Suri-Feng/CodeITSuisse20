@@ -27,7 +27,6 @@ def guess(data):
                  'maAvocado': 0, 'maPomegranate': 0, 'maRamubutan': 0}
     fruits = []
     nums = []
-    weights = []
     for k, v in d.items():
         fruits.append(k)
         nums.append(v)
