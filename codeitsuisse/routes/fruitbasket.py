@@ -19,13 +19,18 @@ def evaluateFruitBasket():
     return jsonify(result);
 
 
-def check(fruit):
-    if fruit is None:
-        return 0
-
 def guess(data):
     
-    data = dict(data)
+    d = dict(data)
+
+    weights = {'maApple': 0, 'maWatermelon': 0, 'maBanana': 0, 'maPineapple': 0, \
+                 'maAvocado': 0, 'maPomegranate': 0, 'maRamubutan': 0}
+    fruits = []
+    nums = []
+    weights = []
+    for k, v in d.items():
+        fruits.append(k)
+        nums.append(v)
     
     a = data.get('maApple')
     w = data.get('maWatermelon')
@@ -35,22 +40,8 @@ def guess(data):
     po = data.get('maPomegranate')
     r = data.get('maRamubutan')
 
-    a = check(a)
-    w = check(w)
-    b = check(b)
-    p = check(p)
-    av = check(av)
-    po = check(po)
-    r = check(r)
+    ans = 0
+    for i in range(3):
+        ans += nums[i]*weights.get(fruits[i])
 
-    print(type(r))
-    
-    Wa = 0
-    Ww = 0
-    Wb = 0
-    Wp = 0
-    Wav = 0
-    Wpo = 0
-    Wr = 0
-    ans = Wa*a + Ww*w + Wb*b + Wp*p + Wav*av + Wpo*po + Wr*r
     return str(ans)
