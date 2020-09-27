@@ -31,11 +31,12 @@ def guess(data):
     r = data.get('maRamubutan')
 
     print(data)
-    a = 16
-    b = 45
-    c = 91
-    Wa = 35
-    Wb = 20
-    Wc = 20
-    ans = Wa*a + Wb*b + Wc*c
+    Wa = 0
+    Ww = 0
+    Wb = 0
+    Wp = 0
+    Wav = 0
+    Wpo = 0
+    Wr = 0
+    ans = Wa*a + Ww*w + Wb*b + Wp*p + Wav*av + Wpo*po + Wr*r
     return str(ans)
