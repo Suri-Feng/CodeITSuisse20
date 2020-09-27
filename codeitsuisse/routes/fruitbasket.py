@@ -19,8 +19,8 @@ def evaluateFruitBasket():
     return jsonify(result);
 
 def guess(data):
-    dataString = data.decode('utf-8')
-    data = json.loads(dataString)
+    
+    data = dict(data)
     
     a = data.get('maApple')
     w = data.get('maWatermelon')
