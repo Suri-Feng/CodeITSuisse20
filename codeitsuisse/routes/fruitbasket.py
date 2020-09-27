@@ -31,14 +31,6 @@ def guess(data):
     for k, v in d.items():
         fruits.append(k)
         nums.append(v)
-    
-    a = data.get('maApple')
-    w = data.get('maWatermelon')
-    b = data.get('maBanana')
-    p = data.get('maPineapple')
-    av = data.get('maAvocado')
-    po = data.get('maPomegranate')
-    r = data.get('maRamubutan')
 
     ans = 0
     for i in range(3):
